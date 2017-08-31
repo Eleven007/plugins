@@ -1,0 +1,140 @@
+@tipCon_width: 300px;
+@tipCon_height: 180px;
+.font_family(){
+    font-family: "Microsoft Yahei","微软雅黑";
+}
+.border_radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.box_shadow(@x:0px, @y:0px, @blur:18px, @spread:0px, @color:rgb(227, 227, 227)) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none outside none;
+}
+a {
+    text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+#tipContainer {
+    z-index: 2000;
+    position: absolute;
+    width: @tipCon_width;
+    height: @tipCon_height;
+    i {
+        margin-top: -1px;
+        margin-left: 22px;
+         margin-right: -22px;
+        display: block;
+        height: 0;
+        width: 0;
+        font-size: 0;
+        line-height: 0;
+        border-color: rgba(255,255,255,1) transparent transparent transparent;
+        border-style: solid;
+        border-width: 10px;
+    }
+}
+.tipinner {
+     background-color: white;
+    .box_shadow();
+    .border_radius();
+    @tipinner_width: @tipCon_width - 12px*2;
+    padding: 10px 12px;
+    .user_info {
+        @user_info_height: 60px;
+        width: @tipinner_width;
+        height: @user_info_height;
+        .user_photo {
+            width: 60px;
+            height: @user_info_height;
+            .border_radius();
+        }
+        .user_welcome {
+            .font_family;
+            width: @tipinner_width - 73px;
+            height: @user_info_height;
+            float: right;
+            .user_name {
+                margin: 0;
+                width: @tipinner_width - 73px;
+                line-height: 30px;
+            }
+            .user_level {
+                font-size: 13px;
+                font-weight: bold;
+                color: #f55f5f;
+                letter-spacing: 1px;
+            }
+            .level_icon {
+                margin-top: 8px;
+                background-image: url("images/level.png");
+                background-repeat: no-repeat;
+                background-position: -275px -24px;
+                display: inline-block;
+                width: 28px;
+                height: 21px;
+            }
+        }
+    }
+    .user_detail {
+        width: @tipinner_width;
+        margin-top: 15px;
+        & li {
+            font-size: 12px;
+            float: left;
+            span {
+            display: inline-block;
+                color: #F21F28;
+                margin-left: 4px;
+                font-weight: bold;
+            }
+        }
+        & li:not(:first-child) {
+            margin-left: 17px;
+        }
+    }
+    .user_send {
+        text-align: center;
+        float: right;
+        margin-top: 27px;
+        width: 73px;
+        height: 23px;
+        .link_send {
+            background-color: #FFF8DC;
+            padding: 5px 7px;
+            font-size: 12px;
+            color: #F21F28;
+            .Mail_logo {
+                vertical-align: middle;
+                display: inline-block;
+                width: 17px;
+                height: 13px;
+                background-image: url("images/level.png");
+                background-repeat: no-repeat;
+                background-position: -353px -31px;
+            }
+            &:hover {
+                background-color: #FFF0B3;
+            }
+        }
+    }
+}

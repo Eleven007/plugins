@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>演示：移动端TAB触屏切换效果</title>
+<meta name="keywords" content="移动，切换" />
+<meta name="description" content="Helloweba文章结合实例演示HTML5、CSS3、jquery、PHP等WEB技术应用。" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="js/zepto_min.js"></script>
+<script type="text/javascript" src="js/touchslider.js"></script>
+
+
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.helloweba.com" title="返回helloweba首页">helloweba</a></h1></div>
+</div>
+<div id="main">
+	<h2 class="top_title"><a href="http://www.helloweba.com/view-blog-329.html">移动端TAB触屏切换效果</a></h2>
+	
+	<div class="box-163css">
+	<ul id="pagenavi" class="page">
+        <li><a href="#http://www.helloweba.com/css.html" class="active">CSS3</a></li>
+      	<li><a href="#http://www.helloweba.net/jquery.html">JAVASCRIPT</a></li>
+        <li><a href="#http://www.helloweba.com/php.html">PHP</a></li>
+        <li><a href="#http://www.helloweba.net/web.html">HTML5</a></li>
+    </ul>
+    <div id="slider" class="swipe">
+      <ul class="box01_list">
+        <li class="li_list">
+			<div class="pic_list"><img src="images/css3.gif"><span><a href="http://www.helloweba.com/view-blog-323.html">纯CSS3图标旋转效果</a></span></div>
+			<div class="news_list">
+				<p><span class="s_arrow"></span><a href="#">纯CSS3实现超酷的鼠标悬停效果</a></p>
+				<p><span class="s_arrow"></span><a href="#">CSS3实现响应式数据表格</a></p>
+				<p><span class="s_arrow"></span><a href="#">纯CSS3制作漂亮的价格表</a></p>
+				<p><span class="s_arrow"></span><a href="#">使用CSS3美化复选框checkbox</a></p>
+			</div>
+		</li>
+        <li class="li_list">
+			<div class="pic_list"><img src="images/grid.gif"><span><a href="http://www.helloweba.com/view-blog-323.html">超酷的照片墙展示效果</a></span></div>
+			<div class="news_list">
+				<p><span class="s_arrow"></span><a href="#">jQuery复制表单元素</a></p>
+				<p><span class="s_arrow"></span><a href="#">基于jQuery的进度条展示效果</a></p>
+				<p><span class="s_arrow"></span><a href="#">JS实现网页加载进度条</a></p>
+				<p><span class="s_arrow"></span><a href="#">JS实现自动倒计时30秒后按钮才可用</a></p>
+			</div>
+		</li>
+		<li class="li_list">
+			<div class="pic_list"><img src="images/php.gif"><span><a href="#">PHP实现发红包程序</a></span></div>
+			<div class="news_list">
+				<p><span class="s_arrow"></span><a href="#">PHP接收POST数据方式</a></p>
+				<p><span class="s_arrow"></span><a href="#">如何使用jQuery+PHP+MySQL来实现一个在线测试项目</a></p>
+				<p><span class="s_arrow"></span><a href="#">PHP+jQuery+MySql实现红蓝投票功能</a></p>
+				<p><span class="s_arrow"></span><a href="#">PHP操作Session和Cookie</a></p>
+			</div>
+		</li>
+		<li class="li_list">
+			<div class="pic_list"><img src="images/audioplay.gif"><span><a href="#">使用按钮控制HTML5背景音乐开关</a></span></div>
+			<div class="news_list">
+				<p><span class="s_arrow"></span><a href="#">HTML5响应式可触控的音频播放器</a></p>
+				<p><span class="s_arrow"></span><a href="#">HTML5获取地理位置定位信息</a></p>
+				<p><span class="s_arrow"></span><a href="#">HTML5+PHP+jQuery手机摇一摇换衣</a></p>
+				<p><span class="s_arrow"></span><a href="#">HTML5手机重力与方向感应的应用——摇一摇效果</a></p>
+			</div>
+		</li>
+      </ul>
+	  
+    </div>
+	<a href="http://www.helloweba.com/css.html" target="_blank"  class="go_btn">进入<em class="emtitle">CSS3</em></a>
+</div>
+</div>
+
+<script type="text/javascript">
+	var page='pagenavi';
+	var mslide='slider';
+	var mtitle='emtitle';
+	arrdiv = 'arrdiv';
+
+	var as=document.getElementById(page).getElementsByTagName('a');
+
+	var tt=new TouchSlider({id:mslide,'auto':'-1',fx:'ease-out',direction:'left',speed:600,timeout:5000,'before':function(index){
+		var as=document.getElementById(this.page).getElementsByTagName('a');
+		as[this.p].className='';
+		as[index].className='active';
+		this.p=index;
+		var txt=as[index].innerText;
+		$("#"+this.page).parent().find('.emtitle').text(txt);
+		var txturl=as[index].getAttribute('href');		
+		var turl=txturl.split('#');
+		$("#"+this.page).parent().find('.go_btn').attr('href',turl[1]);
+	}});
+
+	tt.page = page;
+	tt.p = 0;
+	//console.dir(tt); console.dir(tt.__proto__);
+	for(var i=0;i<as.length;i++){
+		(function(){
+			var j=i;
+			as[j].tt = tt;
+			as[j].onclick=function(){
+				this.tt.slide(j);
+				return false;
+			}
+		})();
+	}
+</script>
+
+<div id="footer">
+    <p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href="http://www.helloweba.com">www.helloweba.com</a></p>
+</div>
+
+</body>
+</html>

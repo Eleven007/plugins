@@ -1,0 +1,149 @@
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none outside none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+#tipContainer {
+	z-index: 2000;
+	position: absolute;
+	width: 300px;
+	height: 180px;
+}
+
+#tipContainer i {
+	margin-top: -1px;
+	margin-left: 22px;
+	margin-right: -22px;
+	display: block;
+	height: 0;
+	width: 0;
+	font-size: 0;
+	line-height: 0;
+	border-color: #ffffff transparent transparent transparent;
+	border-style: solid;
+	border-width: 10px;
+}
+
+.tipinner {
+	 background-color: white;
+	-webkit-box-shadow: 0px 0px 18px 0px #e3e3e3;
+	-moz-box-shadow: 0px 0px 18px 0px #e3e3e3;
+	box-shadow: 0px 0px 18px 0px #e3e3e3;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 2000;
+	padding: 10px 12px;
+}
+
+.tipinner .user_info {
+	width: 276px;
+	height: 60px;
+}
+
+.tipinner .user_info .user_photo {
+	width: 60px;
+	height: 60px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.tipinner .user_info .user_welcome {
+	font-family: "Microsoft Yahei", "微软雅黑";
+	width: 203px;
+	height: 60px;
+	float: right;
+}
+
+.tipinner .user_info .user_welcome .user_name {
+	margin: 0;
+	width: 203px;
+	line-height: 30px;
+}
+
+.tipinner .user_info .user_welcome .user_level {
+	font-size: 13px;
+	font-weight: bold;
+	color: #f55f5f;
+	letter-spacing: 1px;
+}
+
+.tipinner .user_info .user_welcome .level_icon {
+	margin-top: 8px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 28px;
+	height: 21px;
+}
+
+.tipinner .user_detail {
+	width: 276px;
+	margin-top: 15px;
+}
+
+.tipinner .user_detail li {
+	font-size: 12px;
+	float: left;
+}
+
+.tipinner .user_detail li span {
+	display: inline-block;
+	color: #F21F28;
+	margin-left: 4px;
+	font-weight: bold;
+}
+
+.tipinner .user_detail li:not(:first-child) {
+  margin-left: 17px;
+}
+.tipinner .user_send {
+	text-align: center;
+	float: right;
+	margin-top: 27px;
+	width: 73px;
+	height: 23px;
+}
+
+.tipinner .user_send .link_send {
+	background-color: #FFF8DC;
+	padding: 5px 7px;
+	font-size: 12px;
+	color: #F21F28;
+}
+
+.tipinner .user_send .link_send .Mail_logo {
+	vertical-align: middle;
+	display: inline-block;
+	width: 17px;
+	height: 13px;
+	background-image: url("images/level.png");
+	background-repeat: no-repeat;
+	background-position: -353px -31px;
+}
+
+.tipinner .user_send .link_send:hover {
+	background-color: #FFF0B3;
+}
+/*# sourceMappingURL=tooltip.css.map */

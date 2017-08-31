@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html class="no-scroll">
+    <head>
+        <title>Portfolio of Cihad Turhan - Web Designer & Developer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+
+        <link rel="stylesheet" href="intro.css"/>
+		
+    </head>
+    <body>
+        <div id="intro" class="full-wh" >
+            <svg xmlns="http://www.w3.org/2000/svg" id="goo-svg" version="1.1" width="800">
+            <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 12 -6" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+            </defs>
+            </svg>
+
+            <div id="loading-spinner-container">
+                <div class="autocenter">
+                    <svg id="loading-circle-svg" width="200" height="200"> 
+                    <circle id="loading-circle" cx="0" cy="0" r="70" transform="translate(100 100) rotate(-90)"></circle>
+                    </svg>
+
+                    <div class="middle-wrapper"> 
+                        <div class="middle"></div>
+                    </div> 
+
+                    <div class="particle-wrapper"> 
+                        <div class="particle even"> </div>
+                    </div>
+
+                    <div class="particle-wrapper deg-60"> 
+                        <div class="particle even"> </div>
+                    </div>
+
+                    <div class="particle-wrapper deg-120"> 
+                        <div class="particle even"> </div>
+                    </div>
+
+                    <div class="particle-wrapper  deg-180"> 
+                        <div class="particle even"> </div>
+                    </div>
+
+                    <div class="particle-wrapper  deg-240"> 
+                        <div class="particle even"> </div>
+                    </div>
+
+                    <div class="particle-wrapper  deg-300"> 
+                        <div class="particle even"> </div>
+                    </div>
+
+                    <div class="pie first"></div>
+                    <div class="pie second"></div>
+                    <div class="pie mask"></div>
+                </div>
+            </div>
+
+            <svg version="1.1" id="loading-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1920px" height="270px" viewBox="0 0 1920 270" enable-background="new 0 0 1920 270" xml:space="preserve">
+            <path class="intro-ring" d="M0,0h835
+                  c0,69.036,55.964,125,125,125c69.036,0,125-55.964,125-125h835" transform="translate(0,137)" style="stroke-dasharray: 2062.75537109375px, 2062.75537109375px;"></path>
+            <path class="intro-ring" d="M0,0h835
+                  c0,69.036,55.964,125,125,125c69.036,0,125-55.964,125-125h835" transform=" translate(960,0) rotate(180) translate(-960,-133)" style="stroke-dasharray: 2062.75537109375px, 2062.75537109375px;"></path>    
+            </svg>
+
+            <h3 class="loading-text">LOADING</h3>
+
+        </div>
+    </div>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="PxLoader.min.js"></script>
+         <script type="text/javascript" src="lazyload.js"></script>
+        <script type="text/javascript" src="pxloader-images.min.js"></script>
+    </body>
+</html>

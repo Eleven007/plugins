@@ -1,0 +1,5 @@
+.env
+bower_components/
+node_modules/
+test/assert.js
+test/es5shimsham.js

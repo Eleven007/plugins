@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>js弹出式下拉列表框选择省市地区美化插件 - pickout </title>
+ 
+	<style>
+		*{padding:0;margin:0;}
+		.content {
+			margin:50px auto 0;
+			width:300px;
+			min-height: 500px;
+		}
+
+		.form-group {
+			width:100%;
+			float:left;
+			margin:5px 0;
+		}
+
+		label{
+			margin-bottom:10px;
+			float:left;			
+		}
+
+		.field-input, select{
+			width:calc(100% - 20px);
+			float:left;
+			padding:10px;
+			font-family:inherit;
+		}		
+
+	</style>
+	<link rel="stylesheet" href="css/pickout.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		 
+		<div class="content -bg">		
+			<form action="#" method="post">
+				<div class="form-group">
+					<label for="name">姓名:</label>
+					<input type="text" name="name" id="name" class="field-input">
+				</div>			
+				<div class="form-group">
+					<label for="city">城市:</label>
+					<select name="city" id="city" class="city pickout" placeholder="选择一个城市">
+						<option data-icon="&spades;" value="bj">北京</option>
+						<option data-icon="&clubs;" value="sh">上海</option>
+						<option data-icon="&hearts;" value="gz">广州</option>
+						<option selected data-icon="&diams;" value="sz">深圳</option>
+						<option data-icon="&#9786;" value="xg">香港</option>
+						<option data-icon="&#9792;" value="sjz">石家庄</option>
+						<option data-icon="&#9794;" value="cd">成都</option>
+					</select>			
+				</div>
+				<div class="form-group">
+					<label for="name2">昵称:</label>
+					<input type="text" name="name2" id="name2" class="field-input">			
+				</div>
+				<div class="form-group">
+					<label for="state">职位:</label>
+					<select name="state" id="state" class="state pickout" placeholder="选择一个职位">
+						<option value="pe">项目经理</option>
+						<option value="pb">工程师</option>
+						<option value="ba">培训师</option>
+						<option value="sp">项目策划</option>
+						<option value="qd">前端开发</option>
+					</select>			
+				</div>		
+			</form>
+		</div>
+		 
+	</div>
+	
+	<script src="js/pickout.js"></script>
+	<script>
+
+		// Preparar o select
+		//pickout.to('.pickout');
+		pickout.to({
+			el:'.city',
+			theme: 'dark', 
+			search: true
+		});
+
+		pickout.to({
+			el:'.state',
+			theme: 'clean',
+		});
+
+		// Caso o valor já venha do servidor, já atribui a seleção automaticamente
+		pickout.updated('.city');
+		
+		
+	</script>
+</body>
+</html>
