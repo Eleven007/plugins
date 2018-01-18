@@ -1,0 +1,23 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    outline: none;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+.upvote-button{
+    width: 48px;
+    height: 48px;
+}
+.btn-upvote{
+    width: 48px;
+    height: 48px;
+    background: url(../img/zan.png) center no-repeat;
+    cursor: pointer;
+}
+.btn-upvote:active{
+    background: url(../img/zan_press.png) center no-repeat;
+}

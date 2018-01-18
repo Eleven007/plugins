@@ -23,11 +23,8 @@
 			if(typeof(options) == 'object'){
 				jq.extend(this.options, options);	
 			}
-			if(parseInt(this.body.outerWidth())>1255 || navigator.userAgent.indexOf('iPad') !== -1){
-				this.options.width = 1190;	
-			}else{
-				this.options.width = 970;	
-			}
+			console.log(this.parent.width);
+			this.options.width=this.parent.width();
 			this.total = this.data.length;
 			this.pageNow = this.options.initPage;
 			this.preLeft = 0;
@@ -39,7 +36,6 @@
 		},
 		drawContent: function(){
 			this.parent.empty();
-			this.parent.css({width:this.options.width+"px", height:this.options.height+"px", position: "relative"});
 			this.content = document.createElement("DIV");
 			this.content.className = this.options.className;
 			this.content.cssText = "width:"+this.options.width+"px;height:"+this.options.height+"px;cursor:move;position:absolute;";
